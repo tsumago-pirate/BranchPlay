@@ -1,0 +1,14 @@
+BranchPlay includes two third-party football codebases.
+
+Google Research Football, under GRF/, is licensed under the Apache License,
+Version 2.0. The license is GRF/LICENSE.
+
+The Gameplay Football engine, under GRF/third_party/gfootball_engine/, is
+released under the Unlicense. The license is
+GRF/third_party/gfootball_engine/LICENSE. The engine was originally written
+by Bastiaan Konings Schuiling and later incorporated by Google Research.
+Keep that license and this attribution with the engine.
+
+Geist and Montserrat, under viewer/fonts/, are licensed under the SIL Open
+Font License. The license text is in viewer/fonts/Geist-OFL.txt and
+viewer/fonts/OFL.txt.

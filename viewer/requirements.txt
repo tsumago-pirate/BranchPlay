@@ -1,0 +1,4 @@
+# Key-moment explanations. The match chat does not import these.
+agent-framework-core==1.23.0
+agent-framework-ollama==1.0.0b261022
+pillow

@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+
+# Matches played on this machine
+saves/
+
+# Python
+__pycache__/
+*.pyc
+GRF/.venv/
+GRF/build/
+GRF/gfootball.egg-info/
+
+# Engine build products. libgame.dylib is rebuilt from the source.
+GRF/third_party/gfootball_engine/CMakeFiles/
+GRF/third_party/gfootball_engine/CMakeCache.txt
+GRF/third_party/gfootball_engine/Makefile
+GRF/third_party/gfootball_engine/cmake_install.cmake
+GRF/third_party/gfootball_engine/*.a
+GRF/third_party/gfootball_engine/*.dylib
+GRF/third_party/gfootball_engine/*.so
+
+# Installed libraries and the unpacked sources used to build them
+.deps/
+
+# npm install. The built page in viewer/ui/dist is part of the app.
+viewer/ui/node_modules/
+
+# watch.py compiles this from overlay.swift
+viewer/overlay

@@ -1,0 +1,27 @@
+#!/bin/bash
+# Starts the visible BranchPlay match. A second click brings that window forward.
+set -u
+# The app bundle sits in the project folder.
+ROOT="$(cd "$(dirname "$0")/../../.." && pwd)"
+LOG="$HOME/Library/Logs/BranchPlay.log"
+mkdir -p "$(dirname "$LOG")"
+exec >>"$LOG" 2>&1
+echo "---- $(date) ----"
+
+cd "$ROOT" || exit 1
+unset BRANCHPLAY_HIDE_WINDOW
+# Homebrew's shared library folder stays off this path. Putting it here
+# makes ImageIO load Homebrew's image libraries, and the match dies while
+# setting the window icon. SDL2 is already linked by its install name.
+LIB_PATH="$ROOT/.deps/prefix/lib"
+export DYLD_LIBRARY_PATH="$LIB_PATH"
+export ApplePersistenceIgnoreState=YES
+
+existing="$(pgrep -f "[v]iewer/watch.py" | head -n 1 || true)"
+if [ -n "$existing" ]; then
+  echo "already running ($existing)"
+  osascript -e "tell application \"System Events\" to set frontmost of the first process whose unix id is $existing to true" || true
+  exit 0
+fi
+
+exec "$ROOT/GRF/.venv/bin/python" -u viewer/watch.py
