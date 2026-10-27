@@ -4,6 +4,8 @@ Open-source counterfactuals engine for football. Coaches and broadcasters revisi
 
 This is a macOS app, built for Apple Silicon.
 
+The demo: [watch the match](https://youtu.be/LhdAMsLKgiQ?si=owi_gjCEgOt-Pz6r).
+
 The menu:
 
 ![The BranchPlay menu over the match](docs/images/menu.jpg)
